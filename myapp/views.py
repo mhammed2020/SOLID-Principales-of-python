@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from myapp.form import StuForm  
+from myapp.form import StudentForm  
 # Create your views here.
   
 def hello(request):  
@@ -18,5 +19,5 @@ def index(request):
     ##forms.py
 
     stu = StuForm()  
-
-    return render(request,'myapp/index.html',{'form':stu})  
+    student = StudentForm()  
+    return render(request,'myapp/index.html',{'form':stu,'form2':student})  
