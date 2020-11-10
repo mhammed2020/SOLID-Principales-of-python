@@ -5,10 +5,9 @@ from django.shortcuts import render
 from django.http import HttpResponse  
   
 def hello(request):  
-    return HttpResponse("<h2>Hello, Welcome to Django!</h2>")  
 
-import datetime  
+    return render(request,'myapp/hello.html',{})  
+
 def index(request):  
-    now = datetime.datetime.now()  
-    html = "<html><body><h3>Now time is %s.</h3></body></html>" % now  
-    return HttpResponse(html)    
+
+    return render(request,'myapp/index.html',{})  
