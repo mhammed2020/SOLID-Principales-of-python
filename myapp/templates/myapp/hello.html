@@ -1,3 +1,5 @@
+{% load static %} 
+
 <!DOCTYPE html>  
 <html lang="en">  
 <head>  
@@ -5,8 +7,15 @@
     <title>Index</title>  
 </head>  
 <body>  
+
+    {% csrf_token %}  
+      
+    {% if user.is_authenticated %}  
+        Hello, {{ user.username }}.  
+    {% endif %}  
 <h2>{{title}}</h2>  
 <h2>{{body}}</h2>  
+<img src="{% static 'img/pexels-photo.jpg' %}" alt="My image" height="300px" width="700px"/>  
 
 </body>  
 </html> 
