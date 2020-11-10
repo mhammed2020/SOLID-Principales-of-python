@@ -6,14 +6,11 @@
 </head>  
 <body>  
 
-
-
-    {% csrf_token %}  
-      
-    {% if user.is_authenticated %}  
-        Hello, {{ user.username }}.  
-    {% endif %}  
-    <h2>{{title}}</h2>  
-    <h2>{{body}}</h2>  
+<h1> Hello index function</h1>
+    <form method="POST" class="post-form">  
+        {% csrf_token %}  
+        {{ form.as_p }}  
+        <button type="submit" class="save btn btn-default">Save</button>  
+    </form>  
 </body>  
 </html> 
